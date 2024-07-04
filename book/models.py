@@ -6,10 +6,11 @@ class LibraryBook(models.Model):
     isbn = models.CharField(max_length=20, unique=True)
     available = models.BooleanField(default=True)
     publication_date = models.DateField()
-    
+    publisher = models.CharField(max_length=100)  
+    description = models.TextField()  
+
     def __str__(self):
         return self.title
-    
+
     class Meta:
         ordering = ['author']
-# Create your models here.
